@@ -6,6 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "pre-commit": "prettier --write . && git add -a .",
     "pre-push": "npm run lint -- --since  && npm run build -- --since",
     "prebuild": "rimraf dist",
     "build": "nest build",
@@ -71,6 +72,7 @@
   },
   "husky": {
     "hooks": {
+      "pre-commit": "npm run pre-commit",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-push": "npm run pre-push"
     }
