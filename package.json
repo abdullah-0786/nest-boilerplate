@@ -6,7 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "pre-commit": "prettier --write . && git add -a .",
+    "pre-commit": "npx prettier --write . && git add -a .",
     "pre-push": "npm run lint -- --since  && npm run build -- --since",
     "prebuild": "rimraf dist",
     "build": "nest build",
