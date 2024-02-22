@@ -7,7 +7,6 @@
       { "include": "i18n/**/*", "watchAssets": true },
       { "include": "modules/email/**/*", "watchAssets": true }
     ],
-    "deleteOutDir": true,
     "plugins": ["@nestjs/swagger"]
   }
 }

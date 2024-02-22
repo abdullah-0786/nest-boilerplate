@@ -1,0 +1,8 @@
+{
+  "not_found": "{resource} not found",
+  "unauthorized": "unauthorized",
+  "bad_request": "bad request",
+  "conflict": "{resrouce} already exists",
+  "forbidden": "{resource} cannot be accessed",
+  "fatal": "fatal error encountered"
+}

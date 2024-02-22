@@ -1,12 +1,18 @@
-import { Controller, Get } from '@nestjs/common';
+import { ApiController, Get } from 'core/decorators';
 import { AppService } from './app.service';
+import { ApiProperty } from '@nestjs/swagger';
 
-@Controller()
+class HealthCheckResponseDto {
+  @ApiProperty()
+  message: string;
+}
+
+@ApiController({ path: '/', tag: 'App' })
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Get({ description: 'Health Check', path: '', response: HealthCheckResponseDto })
+  getHello() {
+    return { message: this.appService.getHello() };
   }
 }
