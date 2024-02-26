@@ -5,7 +5,7 @@
   "compilerOptions": {
     "assets": [
       { "include": "i18n/**/*", "watchAssets": true },
-      { "include": "modules/email/**/*", "watchAssets": true }
+      { "include": "core/email/**/*", "watchAssets": true }
     ],
     "plugins": ["@nestjs/swagger"]
   }
