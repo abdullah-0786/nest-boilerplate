@@ -6,6 +6,8 @@ import { AppService } from './app.service';
 import * as path from 'path';
 import { FALLBACK_LANGUAGE, LOCALE_HEADER_KEY } from 'constant';
 import { validateEnv } from 'configs/validate-env';
+import DatabaseModule from 'database/database.module';
+// import AuthModule from 'modules/auth/auth.module';
 
 @Module({
   imports: [
@@ -19,6 +21,8 @@ import { validateEnv } from 'configs/validate-env';
       resolvers: [new HeaderResolver([LOCALE_HEADER_KEY])],
       typesOutputPath: path.join(__dirname, '../src/generated/i18n.generated.ts'),
     }),
+    DatabaseModule,
+    // AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

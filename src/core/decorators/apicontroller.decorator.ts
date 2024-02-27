@@ -1,7 +1,8 @@
-import { applyDecorators, Controller, UseFilters } from '@nestjs/common';
+import { applyDecorators, Controller, UseFilters, UseGuards } from '@nestjs/common';
 import { ApiHeaderOptions, ApiHeaders, ApiTags } from '@nestjs/swagger';
 import { API_VERSION_HEADER_KEY, LANGUAGES, LOCALE_HEADER_KEY } from 'constant';
 import { HttpExceptionFilter } from 'core/exceptions/http.exception';
+import JwtAuthGuard from 'modules/auth/jwt-auth.guard';
 
 type ApiControllerArgs = {
   path?: string;
@@ -21,6 +22,7 @@ export function ApiController(args: ApiControllerArgs) {
     ApiTags(args.tag || 'default'),
     ApiHeaders(apiHeaders),
     Controller(args),
-    UseFilters(HttpExceptionFilter)
+    UseFilters(HttpExceptionFilter),
+    UseGuards(JwtAuthGuard)
   );
 }

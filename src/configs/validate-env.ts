@@ -17,6 +17,9 @@ class EnvironmentVariables {
 
   @IsString()
   SWAGGER_PASSWORD: string;
+
+  @IsString()
+  DATABASE_URL: string;
 }
 
 export function validateEnv(config: Record<string, unknown>) {

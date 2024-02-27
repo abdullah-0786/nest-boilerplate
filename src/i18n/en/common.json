@@ -1,3 +1,4 @@
 {
-  "health_check": "Health check successful!"
+  "health_check": "Health check successful!",
+  "invalid_token": "Invalid Token"
 }
